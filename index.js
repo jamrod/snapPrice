@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const herbs = require('./data/products_bulk_herbs')
+const herbs = require('./data/full_products')
 const collections = require('./data/collections')
 
 const app = express()
@@ -8,17 +8,17 @@ const app = express()
 app.use(cors())
 
 app.get("/", async (req, res) => {
-    console.log(req.params)
+    console.log("request received: ", req.params)
     res.json("SnapPrice Running!")
 })
 
 app.get("/collections", async (req, res) => {
-    console.log(req.params)
+    console.log("request received: ", req.params)
     res.json(collections)
 })
 
 app.get("/bulk-herbs", async (req, res) => {
-    console.log(req.params)
+    console.log("request received: ", req.params)
     res.json(herbs)
 })
 
